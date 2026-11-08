@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 html {
     font-family:
         system-ui,
@@ -15,12 +11,6 @@ html {
         "Open Sans",
         "Helvetica Neue",
         sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    background-color: #fcfcfc;
 }
 
 main {

@@ -1,0 +1,77 @@
+
+main {
+    max-width: 1500px;
+
+    > h1 {
+        img {
+            height: 1.5em;
+            vertical-align: middle;
+            translate: 0px -2.5px;
+        }
+    }
+
+    > div#content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+a.mod {
+    position: relative;
+    display: block;
+    width: 400px;
+
+    padding: 10px;
+
+    color: inherit;
+    text-decoration: none;
+
+    box-shadow: 0px 0px 13px 0px #00000030;
+    border-radius: 7px;
+
+    transition: scale .1s ease-out;
+    &:hover, &:focus {
+        scale: 1.02;
+    }
+
+    > h2 {
+        margin: 5px 0px;
+    }
+
+    > h2 {
+        > .mod-icon {
+            height: 1.5em;
+            vertical-align: middle;
+            translate: 0px -2.5px;
+        }
+    }
+
+    > .mod-desc {
+        text-align: center;
+        margin: 7px 0px;
+    }
+
+    > .mod-state {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    > .mod-preview-wrap {
+        width: 100%;
+        max-height: 250px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > .mod-preview {
+            width: 100%;
+        }
+    }
+}

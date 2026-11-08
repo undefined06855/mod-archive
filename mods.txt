@@ -1,0 +1,89 @@
+# Released
+Icon Ninja 07/10/2024
+""Icon"" Kit 01/09/2025
+EditorMusic 12/01/2025
+Rewind 13/04/2025
+Smooth Level Enter 04/04/2026
+Lasso Select 30/03/2026
+Bendy Duration Lines 03/05/2025
+Custom Transitions 15/03/2026
+Select Random 22/03/2025
+Music on Hold 13/09/2026
+Top Comments / Comments Preview 14/07/2026 and 31/07/2026
+Draggable Popups 15/06/2026
+Output-Specific Audio Offset 30/12/2025
+Recording Privacy 25/07/2026
+
+# Outdated
+GDTweaks 25/02/2024
+AutoCheckpoint 09/02/2024
+MinecraftMenu 10/02/2024
+ButtonEaseEdit 10/04/2024
+FLIKK2GD 08/04/2024
+Controllable 17/05/2025
+Object Glow In Editor 06/07/2025
+Node Member Properties 04/11/2025
+
+# Unreleased
+WindowCamera / window hole / Window Immersion / Desktop Dash / Click Through 07/07/2024, 08/03/2025, 02/04/2025, 18/06/2025, 06/10/2026
+GlobalGemHunt 05/08/2024
+VRify / GDVR / GDVR Loader 10/12/2024 and 11/06/2025
+GD3D 17/10/2024
+EditorLua 20/10/2024
+theskysthelimit 17/11/2024
+Haptics API 08/12/2024
+Scale Adjuster 05/02/2025
+Object Nodes 31/01/2025
+debugger stops mods loading 09/02/2025
+libpng fixer mod 04/06/2025
+Local Newgrounds Server 14/05/2025
+Extra Icon Data API / PlayerObjectAPI (not on GitHub) 19/08/2025 and 02/11/2025
+Socials Integration 31/08/2025
+Object Unlock 10/09/2025
+Boost Mode 19/12/2025
+Nearby Share 25/12/2025
+Dash Artist 27/01/2026
+Move GD Save Directory 28/06/2026
+Real Auto Deafen 25/06/2025
+Exploded View 31/05/2026
+Level Swipe 06/03/2026
+Smart Lasso Select 21/02/2026
+Window API / Window API glfwver 09/10/2026 and 06/10/2026
+
+# Unreleased and not on GitHub
+Amogui 14/04/2024
+Annotate 07/11/2026
+Audio Geometry 20/03/2025
+Better Audio Offset 27/06/2024
+Checkpoint Previews 30/03/2025
+Custom End Transition 18/03/2026
+Particle Skibidi 13/09/2024
+down 10/06/2025
+Editor Timeline 05/04/2025
+GeometryJS 25/09/2024
+GJBGL Members In Devtools 10/05/2026
+Haptic Feedback 04/08/2024
+Lively Level Complete 20/08/2025
+memory optimiser real 02/03/2026
+MemoryLeakifier 30/12/2024
+mod that definitely doesnt remove steam drm 19/02/2025
+More Trigger Quick Info 16/05/2025
+MultiTrigger 23/10/2024
+NavigationKeybinds 15/07/2025
+No Button Shadow 15/05/2025
+no end level shake 22/02/2025
+No More Textures 08/04/2024
+orbations 21/08/2025
+Peek 24/10/2026
+pink new games button 05/03/2025
+Predictive Back on Android 07/09/2025
+remove ccspritegrayscale 06/07/2025
+Object Windows (folder name: secret) 15/12/2025
+Shader Layers 13/06/2025
+Sharp Objects 30/06/2026
+Smooth Scroll 14/02/2026
+Song Snippets 02/05/2026
+Splitscreen 18/06/2025
+Ultimate Parental Controls 18/10/2026
+Vertical Editor Tabs 01/11/2026
+Windows Caret Fixer 02/03/2025

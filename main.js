@@ -126,7 +126,7 @@ let server = Bun.serve({
                 },
             });
 
-            return rewriter.transform(new Response(Bun.file("public/index.html")));
+            return rewriter.transform(new Response(Bun.file("public/index.html"), { headers: { "Content-Type": "text/html" } }));
         },
 
         "/:mod": async req => {
@@ -161,7 +161,7 @@ let server = Bun.serve({
                     },
                 });
 
-            return rewriter.transform(new Response(Bun.file("public/mod.html")));
+            return rewriter.transform(new Response(Bun.file("public/mod.html"), { headers: { "Content-Type": "text/html" } }));
         },
 
         "/assets/*": async req => {

@@ -1,10 +1,13 @@
 {
-  "name": "mod-archive",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^7"
-  }
+    "name": "mod-archive",
+    "private": true,
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^7"
+    },
+    "scripts": {
+      "format": "bunx prettier . --write"
+    }
 }

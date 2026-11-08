@@ -1,4 +1,4 @@
-import * as fs from "fs/promises"
+import * as fs from "fs/promises";
 
 /**
  * @typedef ModMetadata
@@ -24,12 +24,12 @@ import * as fs from "fs/promises"
  */
 async function readModData(id) {
     let file = Bun.file(`mods/${id}.md`);
-    if (!await file.exists()) {
+    if (!(await file.exists())) {
         return null;
     }
 
     let text = await file.text();
-    let [ infoString, markdown ] = text.split("-->", 2);
+    let [infoString, markdown] = text.split("-->", 2);
     if (!infoString || !markdown) throw new Error("unreachable");
 
     /** @type {ModMetadata} */
@@ -56,24 +56,25 @@ function formatDate(req, date) {
 let server = Bun.serve({
     routes: {
         "/": async req => {
-            let rewriter = new HTMLRewriter()
-                .on("div#content", {
-                    element: async content => {
-                        /** @type {Array<MarkdownData>} */
-                        let mods = [];
-                        for (let file of await fs.readdir("mods/")) {
-                            let modID = file.replace(".md", "");
-                            let data = await readModData(modID);
-                            if (!data) continue;
+            let rewriter = new HTMLRewriter().on("div#content", {
+                element: async content => {
+                    /** @type {Array<MarkdownData>} */
+                    let mods = [];
+                    for (let file of await fs.readdir("mods/")) {
+                        let modID = file.replace(".md", "");
+                        let data = await readModData(modID);
+                        if (!data) continue;
 
-                            mods.push(data);
-                        }
+                        mods.push(data);
+                    }
 
-                        mods.sort((a, b) => Temporal.PlainDate.from(a.info.date).since(Temporal.PlainDate.from(b.info.date)).total("days"));
-                        mods.reverse();
+                    mods.sort((a, b) =>
+                        Temporal.PlainDate.from(a.info.date).since(Temporal.PlainDate.from(b.info.date)).total("days"),
+                    );
+                    mods.reverse();
 
-                        for (let data of mods) {
-                            let htmlString = `
+                    for (let data of mods) {
+                        let htmlString = `
                                 <a class="mod" href="/${data.id}">
                                     <h2 class="mod-title">
                                         <img class="mod-icon" src="${(() => {
@@ -87,7 +88,7 @@ let server = Bun.serve({
 
                                             if (data.info.icon.startsWith("geode:")) {
                                                 let nonprefix = data.info.icon.replace("geode:", "");
-                                                return `https://api.geode-sdk.org/v1/mods/${nonprefix}/logo`
+                                                return `https://api.geode-sdk.org/v1/mods/${nonprefix}/logo`;
                                             }
 
                                             return `Unknown mod icon type ${data.info.icon}`;
@@ -107,7 +108,7 @@ let server = Bun.serve({
 
                                             if (data.info.preview.startsWith("gh:")) {
                                                 let nonprefix = data.info.preview.replace("gh:", "");
-                                                let [ username, repoName, index ] = nonprefix.split("/", 3);
+                                                let [username, repoName, index] = nonprefix.split("/", 3);
                                                 return `https://raw.githubusercontent.com/${username}/${repoName}/refs/heads/main/previews/preview-${index}.png`;
                                             }
 
@@ -120,10 +121,10 @@ let server = Bun.serve({
                                 </a>
                             `;
 
-                            content.append(htmlString, { html: true });
-                        }
+                        content.append(htmlString, { html: true });
                     }
-                });
+                },
+            });
 
             return rewriter.transform(new Response(Bun.file("public/index.html")));
         },
@@ -137,8 +138,8 @@ let server = Bun.serve({
             let rewriter = new HTMLRewriter()
                 .on("title", {
                     text: text => {
-                        text.replace(text.text.replace("{{MOD_NAME}}", data.info.name))
-                    }
+                        text.replace(text.text.replace("{{MOD_NAME}}", data.info.name));
+                    },
                 })
                 .on("link", {
                     element: link => {
@@ -150,14 +151,14 @@ let server = Bun.serve({
                             content
                                 .replace("{{MOD_DESCRIPTION}}", data.info.description)
                                 .replace("{{MOD_NAME}}", data.info.name)
-                                .replace("{{MOD_ID}}", req.params.mod)
+                                .replace("{{MOD_ID}}", req.params.mod),
                         );
-                    }
+                    },
                 })
                 .on("div#content", {
                     element: content => {
                         content.replace(Bun.markdown.html(data.markdown, { headings: true }), { html: true });
-                    }
+                    },
                 });
 
             return rewriter.transform(new Response(Bun.file("public/mod.html")));
@@ -165,16 +166,16 @@ let server = Bun.serve({
 
         "/assets/*": async req => {
             let file = Bun.file(`public/assets/${new URL(req.url).pathname.replace("/assets/", "")}`);
-            if (!await file.exists()) {
+            if (!(await file.exists())) {
                 return new Response("404 Not Found", { status: 404 });
             }
 
             return new Response(file, { headers: { "Content-Type": file.type } });
-        }
+        },
     },
 
     port: process.env.PORT,
-    development: process.env.DEVELOPMENT == "true"
+    development: process.env.DEVELOPMENT == "true",
 });
 
 console.log(`Hosting mod archive at port ${server.port}`);

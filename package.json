@@ -8,6 +8,6 @@
         "typescript": "^7"
     },
     "scripts": {
-      "format": "bunx prettier . --write"
+        "format": "bunx prettier . --write"
     }
 }

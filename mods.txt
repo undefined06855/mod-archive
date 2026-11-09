@@ -90,4 +90,10 @@ Windows Caret Fixer 02/03/2025
 Compacter Comments 25/01/2024
 Geode AutoDeafen 26/01/2024
 my stuff 23/01/2024
-
+Paper Buttons 17/10/2026
+Popup Rounder 01/09/2026
+Schmoovement 31/07/2026
+Smooth Popups 26/06/2026
+StandaloneifyGD 22/08/2026
+mod that swaps p1 and p2 every 3 seconds 07/08/2026
+Label Testing 13/08/2026
